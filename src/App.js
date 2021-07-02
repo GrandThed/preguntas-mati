@@ -1,56 +1,113 @@
-import React, {Component} from 'react';
-import './App.css';
-import processedData from "./quotes/quotes-processed.json"
+import React, { useEffect, useState } from "react";
+import "./App.css";
 
+import data from "./quotes/preguntas";
 
+const App = () => {
+  return (
+    <div className="App">
+      <Quote />
+    </div>
+  );
+};
 
-class App extends Component {
-  render(){
-    return (
-      <div className="App">
-        <Quote/>
-      </div>
-    );
-  }
-}
+const randomQuestion = (dataList = [], prev) => {
+  const randomQuote = dataList[Math.floor(Math.random() * dataList.length)];
+  if (prev && randomQuote.question === prev.question)
+    return dataList[Math.floor(Math.random() * dataList.length)];
+  return randomQuote;
+};
 
-const randomQuote = (data) => {
-  // const processedData = await parseJson(readJson)
-  return data[Math.floor(Math.random() * data.length)]
-}
+const addUniqueValue = (array, value) => {
+  if (array.indexOf(value) === -1) return [...array, value];
+  return array;
+};
 
+const Quote = () => {
+  const categories = data.reduce(
+    (acc, e) => addUniqueValue(acc, e.category),
+    []
+  );
 
-class Quote extends Component {
-  constructor(props) {
-    super(props)
+  const [hint, setHint] = useState(false);
 
-    this.state = {
-      quote : randomQuote(processedData)
+  const [state, setState] = useState({
+    question: randomQuestion(data),
+    ...categories.reduce((acc, e) => ({ ...acc, [e]: true }), {}),
+  });
+
+  const handleChange = () => {
+    setHint(false);
+    setState((prev) => ({
+      ...prev,
+      question: randomQuestion(
+        data.filter((e) => state[e.category]),
+        state.question
+      ),
+    }));
+  };
+  const HandleHint = () => {
+    setHint((prev) => !prev);
+  };
+
+  const handleCheckbox = (e) => {
+    setState((prev) => ({
+      ...prev,
+      [e]: !prev[e],
+    }));
+  };
+
+  useEffect(() => {
+    console.log(state[state.question.category])
+    if (!state[state.question.category]){
+      handleChange()
     }
-    this.handleChange = this.handleChange.bind(this)
-  }
-  
+  }, [state])
 
-  handleChange() {
-    this.setState({
-      quote : randomQuote(processedData)
-    })
-  }
-  
-
-  render(){
-    return(
-    <div className="quote">
-      <h1 className="text" >{this.state.quote.quote}</h1>
-      <h3 className="text" >{this.state.quote.author}</h3>
-      <div className="btns" >
-        <button className="btn-twitter"><a href={`https://twitter.com/intent/tweet?text="${this.state.quote.quote}"%0A${this.state.quote.author}`} target="_blank" rel="noopener noreferrer">tweet</a></button>
-        <button className="btn-next" onClick={this.handleChange}>Next</button>
+  return (
+    <>
+      <div className="category__container">
+        {categories.map((e) => {
+          return (
+            <label key={e}>
+              {e}
+              <input
+                className="category__input"
+                type="checkbox"
+                onChange={() => handleCheckbox(e)}
+                checked={state[e]}
+              />
+            </label>
+          );
+        })}
       </div>
-    </div>)
-  }
-}
+      <div className="quote">
+        {state.question ? (
+          <>
+            <h1 className="text">Pregunta de: {state.question.category}</h1>
+            <h3 className="text">{state.question.question}</h3>
+            {hint && <p>{state.question.hint}</p>}
+          </>
+        ) : (
+          <h1 className="text">No hay preguntas u.u</h1>
+        )}
+        <div className="btns">
+          <button
+            className="btn-next"
+            disabled={data.filter((e) => state[e.category]).length < 2}
+            onClick={handleChange}
+          >
+            Siguiente
+          </button>
+          {state.question && state.question.hint && (
+            <button className="btn-next" onClick={HandleHint}>
+              Pista
+            </button>
+          )}
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default App;
-
-

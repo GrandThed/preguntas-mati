@@ -1,5 +1,5 @@
 {
-  "name": "quote-machine",
+  "name": "questions-machine",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,10 +17,10 @@
     "redux": "^4.0.5",
     "twitter": "^1.7.1"
   },
-  "homepage": "https://grandthed.github.io/quote-machine/",
+  "homepage": "https://grandthed.github.io/questions-machine/",
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
