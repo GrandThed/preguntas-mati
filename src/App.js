@@ -58,11 +58,11 @@ const Quote = () => {
   };
 
   useEffect(() => {
-    console.log(state[state.question.category])
-    if (!state[state.question.category]){
-      handleChange()
+    console.log(state[state.question.category]);
+    if (!state[state.question.category]) {
+      handleChange();
     }
-  }, [state])
+  }, [state]);
 
   return (
     <>
