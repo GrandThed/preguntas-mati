@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "61a3bc51168d136a81e46b40e1ca8b50",
+    "revision": "2c288581df05714439eb5378649fa135",
     "url": "/preguntas-mati/index.html"
   },
   {
-    "revision": "7c2966f93a3f880af9a5",
+    "revision": "20c283fb62d9de96663d",
     "url": "/preguntas-mati/static/css/main.4abc507c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/preguntas-mati/static/js/2.06c7f987.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7c2966f93a3f880af9a5",
-    "url": "/preguntas-mati/static/js/main.266e66f2.chunk.js"
+    "revision": "20c283fb62d9de96663d",
+    "url": "/preguntas-mati/static/js/main.faacdce0.chunk.js"
   },
   {
     "revision": "62e9f72bd39f247d1586",

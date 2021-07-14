@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/preguntas-mati/static/css/main.4abc507c.chunk.css",
-    "main.js": "/preguntas-mati/static/js/main.266e66f2.chunk.js",
-    "main.js.map": "/preguntas-mati/static/js/main.266e66f2.chunk.js.map",
+    "main.js": "/preguntas-mati/static/js/main.faacdce0.chunk.js",
+    "main.js.map": "/preguntas-mati/static/js/main.faacdce0.chunk.js.map",
     "runtime-main.js": "/preguntas-mati/static/js/runtime-main.7441ce5b.js",
     "runtime-main.js.map": "/preguntas-mati/static/js/runtime-main.7441ce5b.js.map",
     "static/js/2.06c7f987.chunk.js": "/preguntas-mati/static/js/2.06c7f987.chunk.js",
     "static/js/2.06c7f987.chunk.js.map": "/preguntas-mati/static/js/2.06c7f987.chunk.js.map",
     "index.html": "/preguntas-mati/index.html",
-    "precache-manifest.f29eaa84901f967cfd43f0126b73e5d7.js": "/preguntas-mati/precache-manifest.f29eaa84901f967cfd43f0126b73e5d7.js",
+    "precache-manifest.e95885097b24606ec90668fb2bd2c9fd.js": "/preguntas-mati/precache-manifest.e95885097b24606ec90668fb2bd2c9fd.js",
     "service-worker.js": "/preguntas-mati/service-worker.js",
     "static/css/main.4abc507c.chunk.css.map": "/preguntas-mati/static/css/main.4abc507c.chunk.css.map",
     "static/js/2.06c7f987.chunk.js.LICENSE.txt": "/preguntas-mati/static/js/2.06c7f987.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7441ce5b.js",
     "static/js/2.06c7f987.chunk.js",
     "static/css/main.4abc507c.chunk.css",
-    "static/js/main.266e66f2.chunk.js"
+    "static/js/main.faacdce0.chunk.js"
   ]
 }
